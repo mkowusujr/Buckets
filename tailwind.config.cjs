@@ -8,6 +8,10 @@ const config = {
     extend: {}
   },
 
+  daisyui: {
+    themes: ["light", "dark", "retro"]
+  },
+
   plugins: [daisyui]
 };
 
