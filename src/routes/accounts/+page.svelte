@@ -5,6 +5,13 @@
   $: ({ account, accounts } = data);
 </script>
 
+<svelte:head>
+  {#if account}
+    <title>{account.name}</title>
+  {:else}
+    <title>Accounts</title>
+  {/if}
+</svelte:head>
 <main class="flex justify-center">
   {#if !data}
     <p>Loading...</p>
