@@ -19,8 +19,6 @@ export const dropQueryKeys = createQueryKeys('drops', {
         .then(d => d.data) as Promise<Drop[]>;
     }
   })
-  // filters: {}
-  // buckets: {}
 });
 
 export const filterQueryKeys = createQueryKeys('filters', {
@@ -32,6 +30,17 @@ export const bucketsQueryKeys = createQueryKeys('buckets', {
     queryKey: null,
     queryFn: () => {
       return fetch(`/api/buckets`)
+        .then(f => f.json())
+        .then(d => d.data) as Promise<string[]>;
+    }
+  }
+});
+
+export const accountsQueryKeys = createQueryKeys('accounts', {
+  all: {
+    queryKey: null,
+    queryFn: () => {
+      return fetch(`/api/accounts`)
         .then(f => f.json())
         .then(d => d.data) as Promise<string[]>;
     }

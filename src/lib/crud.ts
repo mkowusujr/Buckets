@@ -55,3 +55,9 @@ export const collectBuckets = async () => {
     b => b.name
   );
 };
+
+export const collectAccounts = async () => {
+  return (await prisma.account.findMany({ select: { name: true } })).map(
+    a => a.name
+  );
+};

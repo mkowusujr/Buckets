@@ -8,7 +8,9 @@ export default function Drop({ drop }: Props) {
       <div className="capitalize text-black">{drop.name}</div>
       <div className="capitalize text-green-800">${drop.price}</div>
       <div className="capitalize text-yellow-700">{drop.bucket.name}</div>
-      <div className="capitalize text-black">{new Date(drop.date).toDateString()}</div>
+      <div className="capitalize text-black">
+        {new Date(drop.date).toDateString()}
+      </div>
       <div className="capitalize text-blue-800">{drop.account.name}</div>
     </div>
   );
