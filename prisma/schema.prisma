@@ -14,18 +14,21 @@ model Drop {
   bucketid Int
   price    Int
   date     DateTime @default(now())
-  card     Card     @relation(fields: [cardid], references: [id])
-  cardid   Int
+  account     Account     @relation(fields: [accountid], references: [id])
+  accountid   Int
 }
 
 model Bucket {
-  id    Int    @id @default(autoincrement())
-  name  String
-  drops Drop[]
+  id         Int     @id @default(autoincrement())
+  name       String @unique
+  drops      Drop[]
+  isActive   Boolean @default(true)
+  allocratio Int?
+  goal       Int?
 }
 
-model Card {
+model Account {
   id   Int    @id @default(autoincrement())
-  name String
+  name String  @unique
   Drop Drop[]
 }
