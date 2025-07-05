@@ -1,7 +1,6 @@
 'use client';
 
 import { filterQueryKeys } from '@/lib/query-keys';
-import { XCircleIcon } from '@heroicons/react/16/solid';
 import { useQueryClient } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import { useDebounceValue } from 'usehooks-ts';

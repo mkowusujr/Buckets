@@ -1,6 +1,6 @@
 'use client';
 
-import Drop from './Drop';
+import Drop from '@/components/Drops/Drop';
 import { useDrops } from '@/lib/useDrops';
 
 export default function Drops() {

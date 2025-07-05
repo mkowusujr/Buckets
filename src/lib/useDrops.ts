@@ -13,7 +13,8 @@ export const useDrops = () => {
   const { data: filters } = useQuery({
     queryKey: filterQueryKeys.all.queryKey,
     queryFn: () => defaults as DropFilters,
-    initialData: defaults as DropFilters
+    initialData: defaults as DropFilters,
+    staleTime: Infinity
   });
 
   return useQuery({ ...dropQueryKeys.drops(filters), enabled: !!filters });
